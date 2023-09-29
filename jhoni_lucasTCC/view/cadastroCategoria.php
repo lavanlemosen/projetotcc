@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="../java/comandos.js"></script>
+</head>
+<body>
+        <div id="campos">
+            <form method="post" action="../banco/cadastrarCategoria.php">
+            <div class="perguntas" id="perguntas">
+                <h2>Cadastro de categorias</h2>
+                <input type="text" name="nome" placeholder="Digite o nome da categoria" required>
+                <input type="submit" value="Concluir cadastro">
+            </div>
+        </form>
+        </div>
+</body>
+</html>
