@@ -1,46 +1,66 @@
 <?php
 session_start();
-$_SESSION["tipo"] =2;
+$_SESSION["tipo"] = 2;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/estilos.css">
     <script src="../java/comandos.js"></script>
 </head>
+
 <body>
-        <div id="campos" align="center">
+    <main>
+        <div class="agrupador-de-campos">
             <form method="post" action="../banco/cadastrarUsu.php">
-            <div class="perguntas" id="perguntas1" align="center" >
-                <h2>Cadastro de usuario etapa 1/3</h2>
-                <input type="text" name="usuario" placeholder="Nome de usuario">
-               
-                <input type="text" name="cpf" placeholder="CPF" >
-              
-                <input type="email" name="email" placeholder="Email" >
-             
-                <button type="button" onclick="proximo(perguntas1,perguntas2)">Proximo</button>
-            </div>
-            <div class="perguntas" id="perguntas2" align="center" style="display: none;">
-                <h2>Cadastro de usuario etapa 2/3</h2>
-                <input type="text" name="nome" placeholder="Nome completo">
-                <input type="date" name="nascimento" placeholder="data de nascimento" >
-                
-                <input type="text" name="tele" placeholder="Digite o seu numero de telefone" >
-                
-                <button onclick="proximo(perguntas2,perguntas3)">Proximo</button>
-            </div>
-            <div class="perguntas" id="perguntas3" align="center" style="display: none;">
-                <h2>Cadastro de usuario etapa 3/3</h2>
-                <input type="password" name="senha" placeholder="senha do usuario" required>
-                <input type="password" placeholder="confirmar senha" required>
-                <input type="submit" value="Concluir cadastro">
-            </div>
-        </form>
+                <div class="perguntas" id="pergunta1">
+                    <div class="titulo">
+                        <h1>Cadastro</h1>
+                        <a href="cadastroUsuario2.php">Login</a>
+                    </div>
+                    <div class="campos">
+                        <input type="text" name="usuario" placeholder="Nome">
+                        <input type="text" name="cpf" placeholder="CPF">
+                        <input type="email" name="email" placeholder="Email">
+                    </div>
+                    <input type="button" class="button" onclick="proximo(pergunta1,pergunta2)" value="Próximo">
+                </div>
+
+                <div class="perguntas" id="pergunta2">
+                    <div class="titulo">
+                        <h1>Cadastro</h1>
+                        <p class="voltar" onclick="proximo(pergunta2,pergunta1)">Voltar</p>
+                    </div>
+                    <div class="campos">
+                        <input type="date" name="nascimento" placeholder="Data de Nascimento">
+                        <input type="text" name="tele" placeholder="Celular">
+                        <select name="Gênero" id="genero">
+                            <option value="M">Masculino</option>
+                            <option value="F">Feminino</option>
+                            <option value="O">Outro</option>
+                        </select>
+                    </div>
+                    <input type="button" class="button" onclick="proximo(pergunta2,pergunta3)" value="Próximo">
+                </div>
+
+                <div class="perguntas" id="pergunta3">
+                    <div class="titulo">
+                        <h1>Cadastro</h1>
+                        <p class="voltar" onclick="proximo(pergunta2,pergunta3)">Voltar</p>
+                    </div>
+                    <div class="campos">
+                        <input type="password" name="senha" placeholder="Senha">
+                        <input type="password" placeholder="Confirmar Senha">
+                    </div>
+                    <input type="submit" class="submit" value="Cadastrar">
+                </div>
+            </form>
         </div>
+    </main>
 </body>
-</script>
+
 </html>

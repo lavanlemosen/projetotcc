@@ -9,6 +9,7 @@ $nascimento = $_POST["nascimento"];
 $tele = $_POST["tele"];
 $senha = $_POST["senha"];
 $tipo = $_SESSION["tipo"];
+$sexo = $_POST["genero"]
 
 $comando = "select * from usuario where email_usu='$email'";
 $pesquisa = mysqli_query($conexao,$comando);
@@ -29,11 +30,11 @@ if($resultados1<>0 || $resultados2<>0)
     mysqli_query($conexao,$comando);
     if($tipo==1)
     {
-        $comando = "INSERT INTO `cliente`( `nome_cliente`, `data_nasc`, `telefone`, `cpf_cliente`) VALUES ('$nome','$nascimento','$tele','$cpf')";
+        $comando = "INSERT INTO `cliente`( `nome_cliente`, `data_nasc`, `telefone`, `cpf_cliente`, `sexo`) VALUES ('$nome','$nascimento','$tele','$cpf','$sexo')";
         mysqli_query($conexao,$comando);
         header("location: ../view/CadastradoSucesso.html");
     }else{
-        $comando = "INSERT INTO `vendedor`( `nome_vendedor`, `cpf_vendedor`, `data_nasc`, `telefone`) VALUES ('$nome','$cpf','$nascimento','$tele')";
+        $comando = "INSERT INTO `vendedor`( `nome_vendedor`, `cpf_vendedor`, `data_nasc`, `telefone`, `sexo`) VALUES ('$nome','$cpf','$nascimento','$tele','$sexo')";
         mysqli_query($conexao,$comando);
         header("location: ../view/CadastradoSucesso.html");
     }

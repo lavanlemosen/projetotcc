@@ -11,19 +11,12 @@
 
 <body>
     <div class="agrupador-de-campos">
-        <form method="post" action="../banco/cadastrarEstado.php">
+        <form method="post" action="../banco/cadastrarPais.php">
             <div class="perguntas" id="perguntas" align="center">
 
                 <div class="campos">
-                    <h2>Cadastro de Estado</h2>
-                    <input type="text" name="nome" placeholder="nome do estado" required>
-                    <input type="text" name="sigla" placeholder="sigla" required>
-                    <select name="pais">
-                <?php
-                include "../banco/funcoes.php";
-                PesquisaPais();
-                 ?>
-                    </select>
+                    <h2>Cadastro de cupom</h2>
+                    <input type="text" name="nome" placeholder="nome do país" required>
                     <input type="submit" value="Concluir cadastro" class="submit">
                 </div>
             </div>
